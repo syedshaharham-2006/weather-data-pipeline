@@ -1,6 +1,6 @@
 # End-to-End Serverless Data Pipeline for Real-Time Weather Forecasting
 
-This project demonstrates the design and deployment of a robust end-to-end serverless data pipeline that automates the entire flow from API consumption to an interactive BI dashboard. The pipeline runs on a continuous 5-minute refresh cycle, providing up-to-date weather forecasting data.
+This project is a robust serverless data pipeline designed to automate the collection, processing, and visualization of weather forecast data. By leveraging AWS Lambda, Amazon EventBridge, Snowflake, and Looker Studio, this architecture provides real-time weather insights with minimal overhead.
 
 ## Overview
 
@@ -36,15 +36,6 @@ This pipeline fetches real-time weather data from the Open-Meteo API and automat
 3. **Snowpipe** automatically ingests the newly uploaded CSV files from the S3 `/load` folder into **Snowflake**.
 4. **Looker Studio** connects to Snowflake, enabling the creation of interactive dashboards for real-time weather monitoring.
 
-## Project Visuals
-
-### Pipeline Architecture Diagram
-![Pipeline Architecture Diagram](/mnt/data/project1.drawio.png)
-
-
-2. **Looker Studio Dashboard**
-   ![Looker Studio Dashboard](link-to-dashboard-screenshot)
-
 ## Setup Instructions
 
 ### Prerequisites
@@ -65,14 +56,6 @@ This pipeline fetches real-time weather data from the Open-Meteo API and automat
 - Connect Looker Studio to the Snowflake warehouse.
 - Create an interactive dashboard to monitor the weather data (hourly forecasts).
 
-## GitHub Repository
-
-Explore the project repository on GitHub for the full code and setup details:  
-[GitHub Repo](https://lnkd.in/gEWDkw5H)
-
-
-
----
 
 Feel free to clone, fork, or contribute to this repository. If you have any questions or suggestions, feel free to open an issue or pull request.
 
