@@ -15,8 +15,9 @@ This pipeline fetches real-time weather data from the Open-Meteo API and automat
 - **AWS Lambda** (Python): Fetches data from the Open-Meteo API, processes it, and stores both the raw data and the processed CSV file in AWS S3.
 
 ### 3. Data Ingestion
-- **Snowflake Snowpipe**: Automatically ingests the processed CSV files into Snowflake from the S3 `/load` folder as soon as they are uploaded.
-
+- **Amazon SQS**: Sends a message to notify that a new file has been uploaded to S3. This triggers Snowpipe to begin ingesting the processed CSV files into Snowflake from the S3 /load folder.
+- **Snowflake Snowpipe**: Automatically ingests the processed CSV files into Snowflake from the S3 /load folder as soon as they are uploaded and the SQS notification is received.
+  
 ### 4. Data Exploration & Monitoring
 - **Looker Studio**: Connected to Snowflake, enabling interactive exploration and monitoring of the hourly forecast data through a user-friendly dashboard.
 
